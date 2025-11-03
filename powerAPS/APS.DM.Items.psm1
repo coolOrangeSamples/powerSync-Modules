@@ -29,7 +29,7 @@ function Get-ApsItemById($project, $id) {
 function Get-ApsTipVersion($project, $item) {
     Write-Verbose "Getting latest version of file..."
     $parameters = @{
-        "Uri"     = "https://developer.api.autodesk.com/data/v1/projects/$(($project.id -replace '^b\.', ''))/items/$([System.Web.HttpUtility]::UrlEncode($item.id))/tip"
+        "Uri"     = "https://developer.api.autodesk.com/data/v1/projects/$($project.id)/items/$([System.Web.HttpUtility]::UrlEncode($item.id))/tip"
         "Method"  = "Get"
         "Headers" = $ApsConnection.Headers
     }

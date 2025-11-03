@@ -45,7 +45,6 @@ function Get-ApsAccReviewVersions($project, $review) {
 
 function Add-ApsAccReview($project, $workflow, $reviewName, $reviewNotes, $versions) { 
 
-    Write-Warning "Will error unless you have review access"
     $fileVersions = @()
     foreach($version in $versions) {
         $fileVersions += @{
