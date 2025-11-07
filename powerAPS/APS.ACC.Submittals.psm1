@@ -243,7 +243,7 @@ function Add-ApsAccItemLocalAttachment($project, $item, $localPath, $fileName){
 
     Publish-ToUrl -url $url -filePath $localPath | Out-Null 
     Get-UploadBucket -bucketKey $bucketKey -objectKey $objectKey -uploadKey $uploadKey | Out-Null
-    $response = Update-ApsAccItemAttachment -project $project -itemID $item -attachmentID $attachment.Id
+    $response = Update-ApsAccItemAttachment -project $project -item $item -attachmentID $attachment.Id
     return $response;   
 }
 
