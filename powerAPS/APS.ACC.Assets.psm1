@@ -117,3 +117,17 @@ function Get-ApsAssetStatuses($project, $queryParameters = $null){
     Write-Verbose "Obtained $($ret.count) asset statuses"
     return $ret
 }
+
+
+function Get-ApsAssetCustomAttributes($project){
+    Write-Verbose "Getting ACC Asset Statuses"
+    $uri = Add-ToUri -uri "https://developer.api.autodesk.com/construction/assets/v1/projects/$($project.Id)/custom-attributes" -queryParameters $queryParameters
+    $parameters = @{
+        "Uri"     = $uri
+        "Method"  = "Get"
+        "Headers" = $ApsConnection.Headers
+    }    
+    $ret = Get-AllApsAccResults -parameters $parameters
+    #Write-Verbose "Obtained $($ret.count) asset statuses"
+    return $ret
+}
