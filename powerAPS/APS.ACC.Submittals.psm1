@@ -45,7 +45,7 @@ function Get-ApsAccItems($project){
         "Headers" = $ApsConnection.Headers
     }    
 
-    $response = Invoke-RestMethod @parameters
+    $response = Get-AllApsAccResults -parameters $parameters
     Write-Verbose "Successfully obtained submittal items!"
     return $response
 }
